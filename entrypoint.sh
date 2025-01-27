@@ -33,6 +33,8 @@ cron
 
 echo "Backup targets: $BACKUP_TARGETS"
 echo "Cron schedule: $CRON_SCHEDULE"
+echo "Namespace: $NAMESPACE"
+echo "Excluded directories: $EXCLUDED_DIRECTORIES"
 echo "Starting backup service..."
 
 # Loop forever
