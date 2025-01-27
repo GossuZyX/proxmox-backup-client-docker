@@ -27,7 +27,7 @@ The [official client environment variables](https://pbs.proxmox.com/docs/backup-
 
 ```bash
 docker run \
-    -e BACKUP_TARGETS="home.pxar:/mnt/bob" \
+    -e BACKUP_TARGETS="root.pxar:/mnt/root" \
     -e EXCLUDED_DIRECTORIES="/proc /sys /dev /run /tmp /mnt /media /var/cache /var/tmp" \
     -e CRON_SCHEDULE="00 03 * * *" \
     -e PBS_REPOSITORY="your@user@your.server.ip.or.hostname:your_storage_name" \
@@ -36,7 +36,7 @@ docker run \
     -e CUSTOM_HOST="bobs-server" \
     -e NAMESPACE="My_favorite_servers" \
     --tmpfs /tmp \
-    -v /home/bob:/mnt/bob:ro \
+    -v /:/mnt/root:ro \
     -d \
     gossuzyx/proxmox-backup-client:latest
 ```
