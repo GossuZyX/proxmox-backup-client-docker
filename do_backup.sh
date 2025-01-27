@@ -13,10 +13,10 @@ fi
 
 if [ ! -z "$EXCLUDED_DIRECTORIES" ]; then
     CUSTOM_EXCLUDED_DIRECTORIES_STRING=""
-    
-    # Split EXCLUDED_DIRECTORIES by comma
-    IFS=',' read -ra DIR_ARRAY <<< "$EXCLUDED_DIRECTORIES"
-    
+
+    # Split EXCLUDED_DIRECTORIES by spaces
+    read -ra DIR_ARRAY <<< "$EXCLUDED_DIRECTORIES"
+
     for DIR in "${DIR_ARRAY[@]}"; do
         # Trim spaces and check if directory exists
         DIR=$(echo "$DIR" | xargs)
@@ -24,7 +24,7 @@ if [ ! -z "$EXCLUDED_DIRECTORIES" ]; then
             CUSTOM_EXCLUDED_DIRECTORIES_STRING+="--exclude $DIR "
         fi
     done
-    
+
     # Remove trailing space
     CUSTOM_EXCLUDED_DIRECTORIES_STRING=$(echo "$CUSTOM_EXCLUDED_DIRECTORIES_STRING" | xargs)
 fi
