@@ -6,8 +6,8 @@ if [ ! -z "$CUSTOM_HOST" ]; then
     CUSTOM_HOST_STRING="--backup-id $CUSTOM_HOST"
 fi
 
-if [ ! -z "$CUSTOM_NAMESPACE" ]; then
-    CUSTOM_NAMESPACE_STRING="--ns $CUSTOM_NAMESPACE"
+if [ ! -z "$NAMESPACE" ]; then
+    CUSTOM_NAMESPACE_STRING="--ns $NAMESPACE"
 fi
 
 echo "------------------------------------------------------------"
