@@ -20,6 +20,11 @@ if [ -z "$CRON_SCHEDULE" ]; then
 	exit 1
 fi
 
+# Warn that no NAMESPACE is set
+if [ -z "$NAMESPACE" ]; then
+	echo "NAMESPACE is not set. We will use root directory of storage."
+fi
+
 env > /cronfile
 echo "$CRON_SCHEDULE /do_backup.sh > /proc/1/fd/1 2>&1" >> /cronfile
 crontab /cronfile
