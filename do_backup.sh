@@ -20,9 +20,7 @@ if [ ! -z "$EXCLUDED_DIRECTORIES" ]; then
     for DIR in "${DIR_ARRAY[@]}"; do
         # Trim spaces and check if directory exists
         DIR=$(echo "$DIR" | xargs)
-        if [ -d "$DIR" ]; then
-            CUSTOM_EXCLUDED_DIRECTORIES_STRING+="--exclude $DIR "
-        fi
+        CUSTOM_EXCLUDED_DIRECTORIES_STRING+="--exclude $DIR "
     done
 
     # Remove trailing space
