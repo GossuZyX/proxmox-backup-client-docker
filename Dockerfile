@@ -1,8 +1,10 @@
 FROM debian:11
 
+RUN apt-get update && apt-get install -y apt-utils
+
 # Universally required APT packages
 RUN apt-get update \
-        && apt-get install -y --no-install-recommends apt-utils ca-certificates wget cron \
+        && apt-get install -y --no-install-recommends ca-certificates wget cron \
         && rm -rf /var/lib/apt/lists/*
 
 # Installation if ARM64 architecture
