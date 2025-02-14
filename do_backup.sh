@@ -31,5 +31,7 @@ fi
 
 
 echo "------------------------------------------------------------"
+echo $(date +"%d.%m.%Y %H:%M:%S")
+echo "Executing: proxmox-backup-client backup $BACKUP_TARGETS $CUSTOM_EXCLUDED_DIRECTORIES_STRING $CUSTOM_HOST_STRING $CUSTOM_NAMESPACE_STRING"
 proxmox-backup-client backup $BACKUP_TARGETS $CUSTOM_EXCLUDED_DIRECTORIES_STRING $CUSTOM_HOST_STRING $CUSTOM_NAMESPACE_STRING
 echo "------------------------------------------------------------"
